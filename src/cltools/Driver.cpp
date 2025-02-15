@@ -174,6 +174,10 @@ Notice that the xdrfile implementation of xtc and trr
 is more robust than the molfile one, since it provides support for generic cell shapes.
 In addition, it allows \ref DUMPATOMS to write compressed xtc files.
 
+If PLUMED is compiled with MPI support, the driver can emulate a multi-simulation environment by setting `--multi` to the appropriate
+number of ranks. This can be useful in conjunction with the \ref special-replica-syntax to perform in-parallel analyses. The driver will
+try to append suffixes to the provided trajectory file (e.g. if given `traj.xtc`, it will look for `traj.0.xtc`, `traj.1.xtc`, etc.)
+or fall back to use the same trajectory for all ranks.
 
 */
 //+ENDPLUMEDOC
